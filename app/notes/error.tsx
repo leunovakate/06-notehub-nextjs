@@ -5,10 +5,10 @@ interface ErrorProps {
   reset: () => void;
 }
 
-export default function Error({ reset }: ErrorProps) {
+export default function Error({ error, reset }: ErrorProps) {
   return (
     <div>
-      <h2>Something went wrong!</h2>
+      <p>Could not fetch the list of notes. {error.message}</p>
       <button onClick={() => reset()}>Try again</button>
     </div>
   );
